@@ -1,0 +1,324 @@
+/* Reset e Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.6;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #fdfdfd; /* Baseado no tom claro do logo */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #4CAF50; /* Cor do logo */
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo img {
+    height: 80px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover, header nav ul li a.active {
+    color: #e8f5e9;
+}
+
+/* Hero - Carrossel da Página Inicial */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    margin-top: 100px; /* Compensa o cabeçalho fixo */
+}
+
+.carousel {
+    position: relative;
+    max-width: 80%;
+    height: 60vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel img.active {
+    display: block;
+    opacity: 1;
+}
+
+.carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.carousel button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel .prev {
+    left: 10px;
+}
+
+.carousel .next {
+    right: 10px;
+}
+
+/* Sobre Nós */
+#about {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 2rem;
+}
+
+.about-card {
+    background-color: #f4f4f4;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    text-align: center;
+}
+
+.about-card h2 {
+    margin-bottom: 1rem;
+    color: #4CAF50;
+}
+
+.about-card p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Serviços e Galeria */
+/* Seção Serviços e Galeria */
+.services-gallery {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #f4f4f4;
+}
+
+.services-gallery h2 {
+    color: #4CAF50;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.services-gallery p {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+/* Contêiner dividido */
+.split-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+/* Lado esquerdo e direito */
+.split-left,
+.split-right {
+    flex: 1;
+    max-width: 45%;
+    min-width: 300px; /* Garante boa visualização em telas pequenas */
+    text-align: center;
+}
+
+.split-left h3,
+.split-right h3 {
+    color: #4CAF50;
+    margin-bottom: 1rem;
+}
+
+.split-left p,
+.split-right p {
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+/* Carrossel */
+.carousel {
+    position: relative;
+    max-width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carousel img.active {
+    display: block;
+    opacity: 1;
+}
+
+.carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.carousel button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel .prev {
+    left: 10px;
+}
+
+.carousel .next {
+    right: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .split-container {
+        flex-direction: column;
+    }
+
+    .split-left,
+    .split-right {
+        max-width: 100%;
+    }
+}
+
+/* Rodapé Fixo */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer .footer-content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+footer .contact-info a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+footer .social-media {
+    display: flex;
+    gap: 1rem;
+}
+
+footer .social-media a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer .social-media a:hover {
+    color: #4CAF50;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    footer .footer-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    footer .contact-info {
+        align-items: center;
+    }
+}
